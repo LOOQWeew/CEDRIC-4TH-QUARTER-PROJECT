@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Cedric's - Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      line-height: 1.6;
+      background: linear-gradient(to bottom right, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      overflow-x: hidden;
+      transition: background 0.5s ease;
+    }
+
+    .container {
+      width: 90%;
+      margin: 0 auto;
+      max-width: 1200px;
+    }
+
+    header {
+      background-image: url('header-background.jpg');
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+      padding: 100px 0;
+      text-align: center;
+      position: relative;
+      margin-bottom: 60px;
+      border-bottom: 5px solid #ff7f50;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    header h1, header p {
+      position: relative;
+      z-index: 1;
+    }
+
+    header h1 {
+      font-size: 4.5em;
+      margin-bottom: 10px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      animation: fadeIn 1s ease-in-out;
+      text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    header p {
+      font-size: 1.5em;
+      font-weight: 300;
+    }
+
+    #profile {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      background-image: url('images.jpg');
+      background-size: cover;
+      background-position: center;
+      padding: 100px 0;
+      border-radius: 10px;
+      margin: 60px auto;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    .profile-image {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 5px solid #fff;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      margin: 20px;
+    }
+
+    .profile-image img {
+      width: 100%;
+      height: auto;
+    }
+
+    .profile-info {
+      max-width: 600px;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 30px;
+      border-radius: 10px;
+      margin: 20px;
+      text-align: center;
+    }
+
+    .profile-info h2 {
+      font-size: 2.5em;
+      color: #ff7f50;
+      margin-bottom: 10px;
+    }
+
+    .profile-info p {
+      font-size: 1.1em;
+      color: #ddd;
+    }
+
+    section {
+      padding: 60px 0;
+      margin-bottom: 60px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    section h2 {
+      text-align: center;
+      font-size: 3em;
+      color: #ff7f50;
+      margin-bottom: 30px;
+      text-transform: uppercase;
+    }
+
+    ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 0;
+    }
+
+    ul li {
+      background-color: #333;
+      color: #fff;
+      padding: 12px 25px;
+      margin: 10px;
+      border-radius: 30px;
+      font-size: 1.1em;
+      transition: all 0.3s ease;
+    }
+
+    ul li:hover {
+      background-color: #ff7f50;
+      transform: translateY(-3px);
+    }
+
+    .project {
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 25px;
+      margin: 20px 0;
+      border-radius: 15px;
+      transition: 0.3s;
+    }
+
+    .project:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 25px 55px rgba(0, 0, 0, 0.3);
+    }
+
+    .project h3 {
+      font-size: 2em;
+      color: #ff7f50;
+      margin-bottom: 10px;
+    }
+
+    .project p {
+      font-size: 1em;
+      color: #ccc;
+    }
+
+    .project a {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #ff7f50;
+      color: #fff;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .project a:hover {
+      background-color: #e6644b;
+    }
+
+    .project-image {
+      width: 100%;
+      height: 250px;
+      background-size: cover;
+      background-position: center;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    #contact {
+      background-color: rgba(0, 0, 0, 0.85);
+      color: #fff;
+      padding: 60px 0;
+      text-align: center;
+    }
+
+    #contact input,
+    #contact textarea {
+      width: 90%;
+      max-width: 500px;
+      margin: 10px auto;
+      padding: 15px;
+      border-radius: 5px;
+      border: none;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    #contact button {
+      padding: 12px 30px;
+      background-color: #ff7f50;
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    #contact button:hover {
+      background-color: #e85c3a;
+    }
+
+    .social-icons {
+      margin-top: 20px;
+    }
+
+    .social-icons a {
+      margin: 0 10px;
+      font-size: 1.5em;
+      color: #fff;
+      transition: 0.3s;
+    }
+
+    .social-icons a:hover {
+      color: #ff7f50;
+    }
+
+    footer {
+      background-color: #111;
+      padding: 20px;
+      text-align: center;
+      color: #ccc;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Cedric Cueva</h1>
+            <p>Web Developer | Designer | Programmer</p>
+        </div>
+    </header>
+
+    <section id="profile">
+        <div class="container">
+            <div class="profile-image">
+                <img src="images2.jpg" alt="Cedric Cueva">
+            </div>
+            <div class="profile-info">
+                <h2>About Me</h2>
+                <p>Hello! I'm a passionate web developer with a strong foundation in front-end technologies and an eye for design. I love creating beautiful, user-friendly websites and applications.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <h2>Skills</h2>
+            <ul>
+                <li>HTML & CSS</li>
+                <li>JavaScript</li>
+                <li>React</li>
+                <li>Node.js</li>
+                <li>Responsive Design</li>
+                <li>Version Control (Git)</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2>Projects</h2>
+
+            <!-- Project 1 -->
+            <div class="project">
+                <div class="images3" style="background-image: url('images3.jpg');"></div>
+                <h3>Project 1: History of Photography</h3>
+                <p>This website is all about exploring and learning about the History of Photography. And here we can learn from the beginning and till the modern photography.</p>
+                <a href="https://cedriccueva.github.io/Project-1/" target="_blank">View Project</a>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project">
+                <div class="project-image" style="background-image: url('images4.jpg');"></div>
+                <h3>Project 2: Hobbies and Ambition</h3>
+                <p>This weblog is all about my hobbies and my ambitions. I created this because I want to be someone who can express dreams and goals and learn more about what I do.</p>
+                <a href="https://cedriccueva.github.io/Project-2/" target="_blank">View Project</a>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project">
+                <div class="project-image" style="background-image: url('images5.jpg');"></div>
+                <h3>Project 3: Favorite Foods</h3>
+                <p>This weblog is all about exploring my food likings and the things that I don't like.</p>
+                <a href="https://cedriccueva.github.io/Project-3/" target="_blank">View Project</a>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="project">
+                <div class="project-image" style="background-image: url('images6.jpg');"></div>
+                <h3>Project 4: Declamation Speech</h3>
+                <p>This weblog is all about my declamation speech where I put my speech. And it is subject to war and to learn about a certain character.</p>
+                <a href="https://cedriccueva.github.io/Project-4/" target="_blank">View Project</a>
+            </div>
+
+            <!-- Project 5 -->
+            <div class="project">
+                <div class="project-image" style="background-image: url('images7.jpg');"></div>
+                <h3>Project 5: Values Project</h3>
+                <p>This project requires to say I Love you to a family member</p>
+                <a href="https://classroom.google.com/u/3/c/NzA5MTczNTU5NjQw/a/NzY0MzczNDcyMjU3/details" target="_blank">View Project</a>
+            </div>
+
+            <!-- Project 6 -->
+            <div class="project">
+                <div class="project-image" style="background-image: url('images8.jpg');"></div>
+                <h3>Project 6: Science Project</h3>
+                <p>This is for catapult building and testing weather it's durable or has the specific motion</p>
+                <a href="https://www.youtube.com/watch?v=UUJiDIzy_do&ab_channel=PhysicsBurns%28RaymondBurns%29" target="_blank">View Project</a>
+            </div>
+
+            <!-- Project 7 -->
+            <div class="project">
+                <div class="project-image" style="background-image: url('images9.jpg');"></div>
+                <h3>Project 7: Math Project</h3>
+                <p>It requires us to finish certain worksheets and task and solve problematical trigonomentry</p>
+                <a href="https://drive.google.com/file/d/1bI-Q1AZkjCnb8Wf9WCFXk5FsZP69i-Dv/view?usp=drive_link" target="_blank">View Project</a>
+            </div>
+
+            <!-- Project 8 -->
+            <div class="project">
+                <div class="project-image" style="background-image: url('images10.jpg');"></div>
+                <h3>Project 8: P.E Project</h3>
+                <p>Creating a new dance about dramatic expression and other steps. The title of the song is Bleeding Love</p>
+                <a href="https://www.youtube.com/watch?v=3SttVoJ_8N8&ab_channel=7clouds" target="_blank">View Project</a>
+            </div>
+
+            <!-- Project 9 -->
+            <div class="project">
+                <div class="project-image" style="background-image: url('images11.jpg');"></div>
+                <h3>Project 9: Filipino Project</h3>
+                <p>Requires for us to make a film about Noli Me Tangere</p>
+                <a href="https://en.wikipedia.org/wiki/Noli_Me_T%C3%A1ngere_(novel)" target="_blank">View Project</a>
+            </div>
+
+            <!-- Project 10 -->
+            <div class="project">
+                <div class="project-image" style="background-image: url('images12.jpg');"></div>
+                <h3>Project 10: Weblog Development</h3>
+                <p>This is a project for our Computer Subject. That requires us to create a weblog about ourselves and our different kinds of projects in each subjects.</p>
+                <a href="https://github.com/cedriccueva/Main-PROJECT?fbclid=IwZXh0bgNhZW0CMTEAAR56SH06Ej4K-Z5qGQajO5O6Cyf5h4HN3e8aDKmiKpTK9DaMgbxjY1ydVE6BAA_aem_I8EqIQ7ksQE9qjuUIUxwRg" target="_blank">View Project</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Contact</h2>
+            <p>If you'd like to work together or just want to say hi, feel free to reach out!</p>
+            <form>
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" rows="4" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+            <div class="social-icons">
+                <a href="https://twitter.com" target="_blank">Twitter</a>
+                <a href="https://github.com" target="_blank">GitHub</a>
+                <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Cedric Cueva. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
