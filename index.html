@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
   <style>
-    * {
+     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
@@ -306,7 +306,7 @@
         <div class="container">
             <h2>Projects</h2>
 
-            <!-- Project 1 -->
+            
             <div class="project">
                 <div class="images3" style="background-image: url('images3.jpg');"></div>
                 <h3>Project 1: History of Photography</h3>
@@ -314,7 +314,7 @@
                 <a href="https://cedriccueva.github.io/Project-1/" target="_blank">View Project</a>
             </div>
 
-            <!-- Project 2 -->
+            
             <div class="project">
                 <div class="project-image" style="background-image: url('images4.jpg');"></div>
                 <h3>Project 2: Hobbies and Ambition</h3>
@@ -322,7 +322,7 @@
                 <a href="https://cedriccueva.github.io/Project-2/" target="_blank">View Project</a>
             </div>
 
-            <!-- Project 3 -->
+            
             <div class="project">
                 <div class="project-image" style="background-image: url('images5.jpg');"></div>
                 <h3>Project 3: Favorite Foods</h3>
@@ -330,7 +330,7 @@
                 <a href="https://cedriccueva.github.io/Project-3/" target="_blank">View Project</a>
             </div>
 
-            <!-- Project 4 -->
+            
             <div class="project">
                 <div class="project-image" style="background-image: url('images6.jpg');"></div>
                 <h3>Project 4: Declamation Speech</h3>
@@ -338,7 +338,7 @@
                 <a href="https://cedriccueva.github.io/Project-4/" target="_blank">View Project</a>
             </div>
 
-            <!-- Project 5 -->
+            
             <div class="project">
                 <div class="project-image" style="background-image: url('images7.jpg');"></div>
                 <h3>Project 5: Values Project</h3>
@@ -346,7 +346,7 @@
                 <a href="https://classroom.google.com/u/3/c/NzA5MTczNTU5NjQw/a/NzY0MzczNDcyMjU3/details" target="_blank">View Project</a>
             </div>
 
-            <!-- Project 6 -->
+            
             <div class="project">
                 <div class="project-image" style="background-image: url('images8.jpg');"></div>
                 <h3>Project 6: Science Project</h3>
@@ -354,7 +354,7 @@
                 <a href="https://www.youtube.com/watch?v=UUJiDIzy_do&ab_channel=PhysicsBurns%28RaymondBurns%29" target="_blank">View Project</a>
             </div>
 
-            <!-- Project 7 -->
+            
             <div class="project">
                 <div class="project-image" style="background-image: url('images9.jpg');"></div>
                 <h3>Project 7: Math Project</h3>
@@ -362,7 +362,7 @@
                 <a href="https://drive.google.com/file/d/1bI-Q1AZkjCnb8Wf9WCFXk5FsZP69i-Dv/view?usp=drive_link" target="_blank">View Project</a>
             </div>
 
-            <!-- Project 8 -->
+            
             <div class="project">
                 <div class="project-image" style="background-image: url('images10.jpg');"></div>
                 <h3>Project 8: P.E Project</h3>
@@ -370,7 +370,7 @@
                 <a href="https://www.youtube.com/watch?v=3SttVoJ_8N8&ab_channel=7clouds" target="_blank">View Project</a>
             </div>
 
-            <!-- Project 9 -->
+            
             <div class="project">
                 <div class="project-image" style="background-image: url('images11.jpg');"></div>
                 <h3>Project 9: Filipino Project</h3>
@@ -378,12 +378,12 @@
                 <a href="https://en.wikipedia.org/wiki/Noli_Me_T%C3%A1ngere_(novel)" target="_blank">View Project</a>
             </div>
 
-            <!-- Project 10 -->
+            
             <div class="project">
                 <div class="project-image" style="background-image: url('images12.jpg');"></div>
                 <h3>Project 10: Weblog Development</h3>
                 <p>This is a project for our Computer Subject. That requires us to create a weblog about ourselves and our different kinds of projects in each subjects.</p>
-                <a href="https://github.com/LOOQWeew/CEDRIC-4TH-QUARTER-PROJECT" target="_blank">View Project</a>
+                <a href="https://github.com/cedriccueva/Main-PROJECT?fbclid=IwZXh0bgNhZW0CMTEAAR56SH06Ej4K-Z5qGQajO5O6Cyf5h4HN3e8aDKmiKpTK9DaMgbxjY1ydVE6BAA_aem_I8EqIQ7ksQE9qjuUIUxwRg" target="_blank">View Project</a>
             </div>
         </div>
     </section>
@@ -406,8 +406,93 @@
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2025 Cedric Cueva. All Rights Reserved.</p>
-    </footer>
+  <footer>
+    <p>&copy; 2025 Cedric Cueva. All Rights Reserved.</p>
+  </footer>
+
+  
+  <script>
+    
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+
+    
+    const typedText = ["Web Developer", "Designer", "Programmer"];
+    let wordIndex = 0;
+    let letterIndex = 0;
+    let currentText = "";
+    const typingElement = document.querySelector("header p");
+
+    function typeEffect() {
+      if (wordIndex < typedText.length) {
+        if (letterIndex <= typedText[wordIndex].length) {
+          currentText = typedText[wordIndex].substring(0, letterIndex++);
+          typingElement.textContent = currentText;
+          setTimeout(typeEffect, 100);
+        } else {
+          setTimeout(() => {
+            letterIndex = 0;
+            wordIndex = (wordIndex + 1) % typedText.length;
+            typeEffect();
+          }, 1500);
+        }
+      }
+    }
+    typeEffect();
+
+    
+    const revealElements = document.querySelectorAll(".project, .profile-info, section h2");
+    window.addEventListener("scroll", () => {
+      const triggerBottom = window.innerHeight * 0.85;
+      revealElements.forEach(el => {
+        const top = el.getBoundingClientRect().top;
+        if (top < triggerBottom) {
+          el.style.opacity = 1;
+          el.style.transform = "translateY(0)";
+          el.style.transition = "all 0.6s ease-out";
+        }
+      });
+    });
+    revealElements.forEach(el => {
+      el.style.opacity = 0;
+      el.style.transform = "translateY(60px)";
+    });
+
+    
+    const scrollBtn = document.createElement("button");
+    scrollBtn.innerHTML = "⬆️";
+    scrollBtn.style.position = "fixed";
+    scrollBtn.style.bottom = "30px";
+    scrollBtn.style.right = "30px";
+    scrollBtn.style.padding = "10px 15px";
+    scrollBtn.style.fontSize = "18px";
+    scrollBtn.style.border = "none";
+    scrollBtn.style.borderRadius = "8px";
+    scrollBtn.style.background = "#ff7f50";
+    scrollBtn.style.color = "#fff";
+    scrollBtn.style.cursor = "pointer";
+    scrollBtn.style.display = "none";
+    scrollBtn.style.zIndex = "999";
+    document.body.appendChild(scrollBtn);
+
+    scrollBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 500) {
+        scrollBtn.style.display = "block";
+      } else {
+        scrollBtn.style.display = "none";
+      }
+    });
+  </script>
 </body>
 </html>
